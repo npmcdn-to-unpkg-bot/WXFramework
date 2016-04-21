@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+  <siteMapNode title="Route"  url="" description="Route" >
+    <siteMapNode url="#/state1" title="state1"  description="state1" roles="" />
+    <siteMapNode url="#/state2" title="state2"  description="state2" roles="" />
+   </siteMapNode>
+
+  <siteMapNode title="Form"  url="" description="Form" >
+    <siteMapNode url="#/select" title="select demo"  description="select demo" roles="Admin" />
+    <siteMapNode url="#/basicselect" title="basicselect"  description="basicselect" roles="" />
+    <siteMapNode url="#/element" title="element"  description="element" roles="" />
+    <siteMapNode url="#/fileupload" title="fileupload"  description="fileupload" roles="" />
+   <siteMapNode url="#/uploadpaneltest" title="uploadpaneltest"  description="uploadpaneltest" roles="" />
+    <siteMapNode url="#/simpleupload" title="simpleupload"  description="simpleupload" roles="" /> 
+ 
+ <siteMapNode url="#/newfileupload" title="newfileupload"  description="newfileupload" roles="" /> 
+  </siteMapNode>
+  <siteMapNode title="Table"  url="" description="Table" >
+    <siteMapNode url="#/simpletable" title="simple table demo"  description="simple table demo" roles="" />
+    <siteMapNode url="#/colvisibility" title="col visibility demo"  description="col visibility demo" roles="" />
+  </siteMapNode>
+
+  <siteMapNode title="Bootstrap"  url="" description="Bootstrap" >
+    <siteMapNode url="#/date" title="date demo"  description="date demo" roles="" />
+    <siteMapNode url="#/tab" title="tab"  description="tab" roles="" />
+    <siteMapNode url="#/modal" title="Modal"  description="Modal" roles="" />
+  </siteMapNode>
+
+
+  <siteMapNode title="App"  url="" description="App" >
+    <siteMapNode url="#/listuser" title="List User"  description="List User" roles="" />
+    <siteMapNode url="#/testuser" title="Role"  description="Role" roles="" />
+
+    
+  </siteMapNode>
+
+  <siteMapNode title="JSDraw"  url="" description="JSDraw" >
+    <siteMapNode url="#/jsdrawsimple" title="JSDraw demo "  description="JSDraw demo" roles="" />
+  </siteMapNode>
+</siteMap>

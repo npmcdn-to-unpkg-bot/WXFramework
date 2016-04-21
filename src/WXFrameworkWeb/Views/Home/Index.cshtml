@@ -1,0 +1,165 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ngApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WX Framework</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link href="style/warpper.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  
+   
+
+    <link href="bower_components/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet" />
+    <link href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
+    <link href="bower_components/ng-table/dist/ng-table.css" rel="stylesheet" />
+    <link href="bower_components/ui-select/dist/select.css" rel="stylesheet" />
+    <link href="bower_components/select2/select2.css" rel="stylesheet" />
+    <link href="bower_components/angular-toastr/dist/angular-toastr.css" rel="stylesheet" />
+    <link href="bower_components/angular-loading-bar/src/loading-bar.css" rel="stylesheet" />
+    <link href="bower_components/angular-motion/dist/angular-motion.css" rel="stylesheet" />
+    <link href="bower_components/bootstrap-additions/dist/bootstrap-additions.css" rel="stylesheet" />
+    <link href="bower_components/jquery-ui-bootstrap/css/custom-theme/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+
+
+</head>
+<body id="wrapper">
+    <!--HEADER-->
+    <div id="header">
+        <span class="logo"></span><span class="title">WX Framework</span>
+        <div class="headernav topdropdown">
+            <ul style="box-sizing: content-box">
+                <li><span id="userName"></span>(<span id="userBadge"></span>)<br />
+                    角色：<span id="roleName"></span><br />
+                </li>
+                <li><a href="" onclick="common.errorInfoDialog();">显示错误</a></li>
+                <li><a href="@ViewBag.UpdateUrl">信息修改</a></li>
+                <li><a href="@Url.Content("~/Account/LogOut")">安全退出</a></li>
+            </ul>
+        </div>
+        <span class="headerbtn"></span>
+    </div>
+    <!--HEADER END-->
+    <!--Navigation-->
+    <div class="navigation">
+        @foreach (var menu in ViewBag.MapNodes.Children)
+        {
+            if (menu.Title != "Hidden")
+            {
+            <ul>
+                <span><a>@menu.Title</a></span>
+                @foreach (var subMenu in menu.Children)
+                {
+                    <li><a href="@subMenu.Url">@subMenu.Title</a></li>
+                }
+            </ul>
+            }
+        }
+
+    </div>
+    <!--Navigation END-->
+    <!--Navigation-->
+    <div class="switch_box">
+        <a class="switch_on"></a><a class="switch_off"></a>
+    </div>
+    <!--MAINFRAME -->
+    <div class="mainframe">
+        <div ui-view style="padding: 10px 0 0 20px">
+        </div>
+    </div>
+    <div id="errorInfoDialog" style="display: none;" title="错误信息">
+    </div>
+    <!--MAINFRAME END-->
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+  
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script src="bower_components/angular-loading-bar/src/loading-bar.js"></script>
+
+    <script src="bower_components/ng-table/dist/ng-table.js"></script>
+
+    <script src="bower_components/ui-select/dist/select.js"></script>
+
+    <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+
+   
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+
+    <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+
+
+
+    <script src="http://web3.wuxiapptec.sh.cn/JSLibrary/dojo-full/dojo/dojo.js" type="text/javascript"></script>
+    <script src="http://web3.wuxiapptec.sh.cn/JSLibrary/jsdraw/Scilligence.JSDraw2.Pro.js" type="text/javascript"></script>
+
+ 
+
+
+    <script src="Ashx/UserJsHandler.ashx?v=@ViewBag.Time" type="text/javascript"></script>
+    <script type="text/javascript" src="App/warpper.js"></script>
+
+    <script src="App/common.js?v=@ViewBag.Time" type="text/javascript"></script>
+    <!--app js-->
+  
+    <script src="App/component/userpick.js"></script>
+    <script src="App/component/jsdraw.js"></script>
+    <script src="App/component/uploadpanel.js"></script>
+    <script src="App/component/jsdraw.js"></script>
+    <script src="App/component/ngupload.js"></script>
+  
+
+
+    <script type="text/javascript" src="App/app.js?v=@ViewBag.Time"></script>
+    <script type="text/javascript" src="App/config.js"></script>
+    <script type="text/javascript" src="App/factorys.js?v=@ViewBag.Time"></script>
+    <script src="App/common/commonModule.js"></script>
+    <script src="App/route/routeModule.js"></script>
+    <script src="App/select/selectModule.js"></script>
+    <script src="App/select/selectCtrl.js"></script>
+    <script src="App/select/basicSelectCtrl.js"></script>
+    <script src="App/table/tableModule.js"></script>
+    <script src="App/table/listUserCtrl.js"></script>
+    <script src="App/form/formModule.js"></script>
+    <script src="App/form/testUserCtrl.js"></script>
+    <script src="App/form/formDemoCtrl.js"></script>
+
+    <script src="App/table/colVisibilityCtrl.js"></script>
+    <script src="App/table/simpleTableCtrl.js"></script>
+    <script src="App/jsdraw/jsdrawModule.js"></script>
+    <script src="App/jsdraw/jsDrawSimpleCtrl.js"></script>
+   
+
+    <script src="App/upload/uploadModule.js"></script>
+    <script src="App/upload/fileUploadCtrl.js"></script>
+    <script src="App/upload/uploadPanelTestCtrl.js"></script>
+    <script src="App/upload/simpleUploadCtrl.js"></script>
+
+    <script src="App/bootstrap/bootstrapModule.js"></script>
+    <script src="App/bootstrap/modalCtrl.js"></script>
+    <script src="App/bootstrap/editEmployeeCtrl.js"></script>
+    <script src="App/upload/newFileUploadCtrl.js"></script>
+</body>
+</html>

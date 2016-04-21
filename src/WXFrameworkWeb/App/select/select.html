@@ -1,0 +1,44 @@
+﻿<div>
+    <ui-select ng-model="selectedItem">
+        <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+            <span ng-bind="item.name"></span>
+        </ui-select-choices>
+    </ui-select>
+    {{selectedItem}}
+</div>
+<div>
+
+    <h3>Bootstrap theme</h3>
+    <p>Selected: {{address.selected.formatted_address}}</p>
+    <ui-select ng-model="address.selected"
+               theme="bootstrap"
+               ng-disabled="disabled"
+               reset-search-input="false"
+               style="width: 300px;">
+        <ui-select-match placeholder="Enter an address...">{{$select.selected.formatted_address}}</ui-select-match>
+       <!-- track by $index -->
+         <ui-select-choices repeat="address in addresses " 
+                           refresh="refreshAd
+                            dresses($select.search)"
+                           refresh-delay="0">
+            <div ng-bind-html="address.formatted_address | highlight: $select.search"></div>
+        </ui-select-choices>
+    </ui-select>
+</div>
+<div>
+    <h3>Select2 theme</h3>
+    <p>Selected: {{person.selected}}</p>
+    <ui-select ng-model="person.selected" theme="select2" ng-disabled="disabled" style="min-width: 300px;">
+        <ui-select-match placeholder="Select a person in the list or search his name/age...">{{$select.selected.name}}</ui-select-match>
+        <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+            <div ng-bind-html="person.name | highlight: $select.search"></div>
+            <small>
+                email: {{person.email}}
+                age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+            </small>
+        </ui-select-choices>
+    </ui-select>
+</div>

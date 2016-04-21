@@ -1,0 +1,1733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sysName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sysUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactPerson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSystemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysid" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="rolename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSystemRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSystemRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUsersRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleid" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="badge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUsersRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUsersRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelSystemRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelSystemRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelSystemRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelUsersRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleid" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="badge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelUsersRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelUsersRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSystems">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListSystemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSystemsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListRolesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysid" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="badge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListUserRolesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUsersByRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListUsersByRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListUsersByRoleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSysUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sysid" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListSysUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListSysUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByBadge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="badge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByBadgeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByBadgeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmailByBadge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="badge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmailByBadgeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserEmailByBadgeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepcnames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDepcnamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepcnamesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepcnamesByCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepcnamesByCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepcnamesByCompanyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanys">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCompanysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompanysResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="where" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="allornull" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenGetCredence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tokenValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sysID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenGetCredenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokenGetCredenceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="userRoles">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenGetCredence2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tokenValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sysID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenGetCredence2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokenGetCredence2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletionList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompletionListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCompletionListByLeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="leader" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletionListByLeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompletionListByLeaderResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaLoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupleaderByDepcname">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="depcname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupleaderByDepcnameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupleaderByDepcnameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSystem" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSystemRoles" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSystemRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUsersRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUsersRoles" />
+  </wsdl:message>
+  <wsdl:message name="AddUsersRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUsersRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelSystemRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:DelSystemRoles" />
+  </wsdl:message>
+  <wsdl:message name="DelSystemRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:DelSystemRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelUsersRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:DelUsersRoles" />
+  </wsdl:message>
+  <wsdl:message name="DelUsersRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:DelUsersRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSystemsSoapIn">
+    <wsdl:part name="parameters" element="tns:ListSystems" />
+  </wsdl:message>
+  <wsdl:message name="ListSystemsSoapOut">
+    <wsdl:part name="parameters" element="tns:ListSystemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListRoles" />
+  </wsdl:message>
+  <wsdl:message name="ListRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="ListUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersByRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:ListUsersByRole" />
+  </wsdl:message>
+  <wsdl:message name="ListUsersByRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:ListUsersByRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListSysUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListSysUsers" />
+  </wsdl:message>
+  <wsdl:message name="ListSysUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListSysUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserByBadge" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserByBadgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserEmailByBadge" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserEmailByBadgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepcnames" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepcnamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepcnamesByCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepcnamesByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompanys" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredenceSoapIn">
+    <wsdl:part name="parameters" element="tns:TokenGetCredence" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredenceSoapOut">
+    <wsdl:part name="parameters" element="tns:TokenGetCredenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2SoapIn">
+    <wsdl:part name="parameters" element="tns:TokenGetCredence2" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2SoapOut">
+    <wsdl:part name="parameters" element="tns:TokenGetCredence2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompletionList" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompletionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompletionListByLeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompletionListByLeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaLogin" />
+  </wsdl:message>
+  <wsdl:message name="ValidaLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupleaderByDepcname" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupleaderByDepcnameResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemHttpGetIn">
+    <wsdl:part name="sysName" type="s:string" />
+    <wsdl:part name="sysUrl" type="s:string" />
+    <wsdl:part name="sta" type="s:string" />
+    <wsdl:part name="dep" type="s:string" />
+    <wsdl:part name="ContactPerson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ListSystemsHttpGetIn" />
+  <wsdl:message name="ListSystemsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserHttpGetIn">
+    <wsdl:part name="site" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeHttpGetIn">
+    <wsdl:part name="badge" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeHttpGetIn">
+    <wsdl:part name="badge" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesHttpGetIn" />
+  <wsdl:message name="GetDepcnamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanyHttpGetIn">
+    <wsdl:part name="company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanyHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanysHttpGetIn" />
+  <wsdl:message name="GetCompanysHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpGetIn">
+    <wsdl:part name="where" type="s:string" />
+    <wsdl:part name="allornull" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2HttpGetIn">
+    <wsdl:part name="tokenValue" type="s:string" />
+    <wsdl:part name="sysID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="leader" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameHttpGetIn">
+    <wsdl:part name="depcname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemHttpPostIn">
+    <wsdl:part name="sysName" type="s:string" />
+    <wsdl:part name="sysUrl" type="s:string" />
+    <wsdl:part name="sta" type="s:string" />
+    <wsdl:part name="dep" type="s:string" />
+    <wsdl:part name="ContactPerson" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddSystemHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ListSystemsHttpPostIn" />
+  <wsdl:message name="ListSystemsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserHttpPostIn">
+    <wsdl:part name="site" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeHttpPostIn">
+    <wsdl:part name="badge" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByBadgeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeHttpPostIn">
+    <wsdl:part name="badge" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailByBadgeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesHttpPostIn" />
+  <wsdl:message name="GetDepcnamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanyHttpPostIn">
+    <wsdl:part name="company" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDepcnamesByCompanyHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanysHttpPostIn" />
+  <wsdl:message name="GetCompanysHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpPostIn">
+    <wsdl:part name="where" type="s:string" />
+    <wsdl:part name="allornull" type="s:string" />
+    <wsdl:part name="pwd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2HttpPostIn">
+    <wsdl:part name="tokenValue" type="s:string" />
+    <wsdl:part name="sysID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TokenGetCredence2HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="leader" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletionListByLeaderHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameHttpPostIn">
+    <wsdl:part name="depcname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupleaderByDepcnameHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="PassportServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <wsdl:input message="tns:AddSystemSoapIn" />
+      <wsdl:output message="tns:AddSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemRoles">
+      <wsdl:input message="tns:AddSystemRolesSoapIn" />
+      <wsdl:output message="tns:AddSystemRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersRoles">
+      <wsdl:input message="tns:AddUsersRolesSoapIn" />
+      <wsdl:output message="tns:AddUsersRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSystemRoles">
+      <wsdl:input message="tns:DelSystemRolesSoapIn" />
+      <wsdl:output message="tns:DelSystemRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelUsersRoles">
+      <wsdl:input message="tns:DelUsersRolesSoapIn" />
+      <wsdl:output message="tns:DelUsersRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <wsdl:input message="tns:ListSystemsSoapIn" />
+      <wsdl:output message="tns:ListSystemsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListRoles">
+      <wsdl:input message="tns:ListRolesSoapIn" />
+      <wsdl:output message="tns:ListRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUserRoles">
+      <wsdl:input message="tns:ListUserRolesSoapIn" />
+      <wsdl:output message="tns:ListUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListUsersByRole">
+      <wsdl:input message="tns:ListUsersByRoleSoapIn" />
+      <wsdl:output message="tns:ListUsersByRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSysUsers">
+      <wsdl:input message="tns:ListSysUsersSoapIn" />
+      <wsdl:output message="tns:ListSysUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input message="tns:GetAllUserSoapIn" />
+      <wsdl:output message="tns:GetAllUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <wsdl:input message="tns:GetUserByBadgeSoapIn" />
+      <wsdl:output message="tns:GetUserByBadgeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <wsdl:input message="tns:GetUserEmailByBadgeSoapIn" />
+      <wsdl:output message="tns:GetUserEmailByBadgeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <wsdl:input message="tns:GetDepcnamesSoapIn" />
+      <wsdl:output message="tns:GetDepcnamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <wsdl:input message="tns:GetDepcnamesByCompanySoapIn" />
+      <wsdl:output message="tns:GetDepcnamesByCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <wsdl:input message="tns:GetCompanysSoapIn" />
+      <wsdl:output message="tns:GetCompanysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListSoapIn" />
+      <wsdl:output message="tns:GetUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence">
+      <wsdl:input message="tns:TokenGetCredenceSoapIn" />
+      <wsdl:output message="tns:TokenGetCredenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <wsdl:input message="tns:TokenGetCredence2SoapIn" />
+      <wsdl:output message="tns:TokenGetCredence2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <wsdl:input message="tns:GetCompletionListSoapIn" />
+      <wsdl:output message="tns:GetCompletionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <wsdl:input message="tns:GetCompletionListByLeaderSoapIn" />
+      <wsdl:output message="tns:GetCompletionListByLeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaLogin">
+      <wsdl:input message="tns:ValidaLoginSoapIn" />
+      <wsdl:output message="tns:ValidaLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <wsdl:input message="tns:GetGroupleaderByDepcnameSoapIn" />
+      <wsdl:output message="tns:GetGroupleaderByDepcnameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PassportServiceHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <wsdl:input message="tns:AddSystemHttpGetIn" />
+      <wsdl:output message="tns:AddSystemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <wsdl:input message="tns:ListSystemsHttpGetIn" />
+      <wsdl:output message="tns:ListSystemsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input message="tns:GetAllUserHttpGetIn" />
+      <wsdl:output message="tns:GetAllUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <wsdl:input message="tns:GetUserByBadgeHttpGetIn" />
+      <wsdl:output message="tns:GetUserByBadgeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <wsdl:input message="tns:GetUserEmailByBadgeHttpGetIn" />
+      <wsdl:output message="tns:GetUserEmailByBadgeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <wsdl:input message="tns:GetDepcnamesHttpGetIn" />
+      <wsdl:output message="tns:GetDepcnamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <wsdl:input message="tns:GetDepcnamesByCompanyHttpGetIn" />
+      <wsdl:output message="tns:GetDepcnamesByCompanyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <wsdl:input message="tns:GetCompanysHttpGetIn" />
+      <wsdl:output message="tns:GetCompanysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListHttpGetIn" />
+      <wsdl:output message="tns:GetUserListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <wsdl:input message="tns:TokenGetCredence2HttpGetIn" />
+      <wsdl:output message="tns:TokenGetCredence2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <wsdl:input message="tns:GetCompletionListHttpGetIn" />
+      <wsdl:output message="tns:GetCompletionListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <wsdl:input message="tns:GetCompletionListByLeaderHttpGetIn" />
+      <wsdl:output message="tns:GetCompletionListByLeaderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <wsdl:input message="tns:GetGroupleaderByDepcnameHttpGetIn" />
+      <wsdl:output message="tns:GetGroupleaderByDepcnameHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PassportServiceHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <wsdl:input message="tns:AddSystemHttpPostIn" />
+      <wsdl:output message="tns:AddSystemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <wsdl:input message="tns:ListSystemsHttpPostIn" />
+      <wsdl:output message="tns:ListSystemsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input message="tns:GetAllUserHttpPostIn" />
+      <wsdl:output message="tns:GetAllUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <wsdl:input message="tns:GetUserByBadgeHttpPostIn" />
+      <wsdl:output message="tns:GetUserByBadgeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <wsdl:input message="tns:GetUserEmailByBadgeHttpPostIn" />
+      <wsdl:output message="tns:GetUserEmailByBadgeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <wsdl:input message="tns:GetDepcnamesHttpPostIn" />
+      <wsdl:output message="tns:GetDepcnamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <wsdl:input message="tns:GetDepcnamesByCompanyHttpPostIn" />
+      <wsdl:output message="tns:GetDepcnamesByCompanyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <wsdl:input message="tns:GetCompanysHttpPostIn" />
+      <wsdl:output message="tns:GetCompanysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input message="tns:GetUserListHttpPostIn" />
+      <wsdl:output message="tns:GetUserListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <wsdl:input message="tns:TokenGetCredence2HttpPostIn" />
+      <wsdl:output message="tns:TokenGetCredence2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <wsdl:input message="tns:GetCompletionListHttpPostIn" />
+      <wsdl:output message="tns:GetCompletionListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <wsdl:input message="tns:GetCompletionListByLeaderHttpPostIn" />
+      <wsdl:output message="tns:GetCompletionListByLeaderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <wsdl:input message="tns:GetGroupleaderByDepcnameHttpPostIn" />
+      <wsdl:output message="tns:GetGroupleaderByDepcnameHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PassportServiceSoap" type="tns:PassportServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <soap:operation soapAction="http://tempuri.org/AddSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemRoles">
+      <soap:operation soapAction="http://tempuri.org/AddSystemRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersRoles">
+      <soap:operation soapAction="http://tempuri.org/AddUsersRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelSystemRoles">
+      <soap:operation soapAction="http://tempuri.org/DelSystemRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUsersRoles">
+      <soap:operation soapAction="http://tempuri.org/DelUsersRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <soap:operation soapAction="http://tempuri.org/ListSystems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRoles">
+      <soap:operation soapAction="http://tempuri.org/ListRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUserRoles">
+      <soap:operation soapAction="http://tempuri.org/ListUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsersByRole">
+      <soap:operation soapAction="http://tempuri.org/ListUsersByRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSysUsers">
+      <soap:operation soapAction="http://tempuri.org/ListSysUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap:operation soapAction="http://tempuri.org/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <soap:operation soapAction="http://tempuri.org/GetUserByBadge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <soap:operation soapAction="http://tempuri.org/GetUserEmailByBadge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <soap:operation soapAction="http://tempuri.org/GetDepcnames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <soap:operation soapAction="http://tempuri.org/GetDepcnamesByCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <soap:operation soapAction="http://tempuri.org/GetCompanys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence">
+      <soap:operation soapAction="http://tempuri.org/TokenGetCredence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <soap:operation soapAction="http://tempuri.org/TokenGetCredence2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <soap:operation soapAction="http://tempuri.org/GetCompletionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <soap:operation soapAction="http://tempuri.org/GetCompletionListByLeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaLogin">
+      <soap:operation soapAction="http://tempuri.org/ValidaLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <soap:operation soapAction="http://tempuri.org/GetGroupleaderByDepcname" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PassportServiceSoap12" type="tns:PassportServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <soap12:operation soapAction="http://tempuri.org/AddSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemRoles">
+      <soap12:operation soapAction="http://tempuri.org/AddSystemRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersRoles">
+      <soap12:operation soapAction="http://tempuri.org/AddUsersRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelSystemRoles">
+      <soap12:operation soapAction="http://tempuri.org/DelSystemRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelUsersRoles">
+      <soap12:operation soapAction="http://tempuri.org/DelUsersRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <soap12:operation soapAction="http://tempuri.org/ListSystems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListRoles">
+      <soap12:operation soapAction="http://tempuri.org/ListRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/ListUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListUsersByRole">
+      <soap12:operation soapAction="http://tempuri.org/ListUsersByRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSysUsers">
+      <soap12:operation soapAction="http://tempuri.org/ListSysUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <soap12:operation soapAction="http://tempuri.org/GetUserByBadge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <soap12:operation soapAction="http://tempuri.org/GetUserEmailByBadge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <soap12:operation soapAction="http://tempuri.org/GetDepcnames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <soap12:operation soapAction="http://tempuri.org/GetDepcnamesByCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <soap12:operation soapAction="http://tempuri.org/GetCompanys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <soap12:operation soapAction="http://tempuri.org/GetUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence">
+      <soap12:operation soapAction="http://tempuri.org/TokenGetCredence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <soap12:operation soapAction="http://tempuri.org/TokenGetCredence2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <soap12:operation soapAction="http://tempuri.org/GetCompletionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <soap12:operation soapAction="http://tempuri.org/GetCompletionListByLeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaLogin">
+      <soap12:operation soapAction="http://tempuri.org/ValidaLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <soap12:operation soapAction="http://tempuri.org/GetGroupleaderByDepcname" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PassportServiceHttpGet" type="tns:PassportServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <http:operation location="/AddSystem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <http:operation location="/ListSystems" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <http:operation location="/GetAllUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <http:operation location="/GetUserByBadge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <http:operation location="/GetUserEmailByBadge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <http:operation location="/GetDepcnames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <http:operation location="/GetDepcnamesByCompany" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <http:operation location="/GetCompanys" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <http:operation location="/GetUserList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <http:operation location="/TokenGetCredence2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <http:operation location="/GetCompletionList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <http:operation location="/GetCompletionListByLeader" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <http:operation location="/GetGroupleaderByDepcname" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PassportServiceHttpPost" type="tns:PassportServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystem">
+      <http:operation location="/AddSystem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListSystems">
+      <http:operation location="/ListSystems" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <http:operation location="/GetAllUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByBadge">
+      <http:operation location="/GetUserByBadge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmailByBadge">
+      <http:operation location="/GetUserEmailByBadge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnames">
+      <http:operation location="/GetDepcnames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepcnamesByCompany">
+      <http:operation location="/GetDepcnamesByCompany" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanys">
+      <http:operation location="/GetCompanys" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <http:operation location="/GetUserList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokenGetCredence2">
+      <http:operation location="/TokenGetCredence2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionList">
+      <http:operation location="/GetCompletionList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletionListByLeader">
+      <http:operation location="/GetCompletionListByLeader" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupleaderByDepcname">
+      <http:operation location="/GetGroupleaderByDepcname" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PassportService">
+    <wsdl:port name="PassportServiceSoap" binding="tns:PassportServiceSoap">
+      <soap:address location="http://passport.wuxiapptec.sh.cn/passport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PassportServiceSoap12" binding="tns:PassportServiceSoap12">
+      <soap12:address location="http://passport.wuxiapptec.sh.cn/passport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PassportServiceHttpGet" binding="tns:PassportServiceHttpGet">
+      <http:address location="http://passport.wuxiapptec.sh.cn/passport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PassportServiceHttpPost" binding="tns:PassportServiceHttpPost">
+      <http:address location="http://passport.wuxiapptec.sh.cn/passport.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

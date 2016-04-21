@@ -1,0 +1,13 @@
+﻿<ui-select ng-model="$parent.ngModel"
+           theme="bootstrap"
+           ng-disabled="disabled"
+           reset-search-input="false"
+           style="width: 300px;"
+           title="Choose an user">
+    <ui-select-match placeholder="Enter an user Name...">{{$select.selected.UserName}}({{$select.selected.Badge}})</ui-select-match>
+    <ui-select-choices repeat="u in vm.users "
+                       refresh="vm.refreshUsers($select.search)"
+                       refresh-delay="1">
+        <div ng-bind-html="u.UserName + '('+u.Badge+')' | highlight: $select.search"></div>
+    </ui-select-choices>
+</ui-select>

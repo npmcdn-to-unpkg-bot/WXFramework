@@ -1,0 +1,4 @@
+﻿
+<results><TaskID>-999</TaskID><Badge>006848</Badge><EmployeeName>xianing</EmployeeName> 									   <Department>0794</Department><errMsg></errMsg><Card10>0006254860</Card10> 									   <Card16>000000000069650B</Card16><RoomID>40908,41101,22401,22402,23204,10401,10402,40303</RoomID><RoomName>0</RoomName> 						<CardType>0</CardType><Time>2016-02-02 08:32:53</Time><rvalue>1</rvalue></results> 
+
+

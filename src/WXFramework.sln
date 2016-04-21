@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WXFrameworkWeb", "WXFrameworkWeb\WXFrameworkWeb.csproj", "{BBCBEC06-DE26-4425-8F10-410AC4F73716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchLib", "ArchLib\ArchLib.csproj", "{589FB79F-DD28-44A6-B192-FFD15252A69F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchBll", "ArchBll\ArchBll.csproj", "{901DBF30-5DA3-4C82-821F-F9D13913FA27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBCBEC06-DE26-4425-8F10-410AC4F73716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCBEC06-DE26-4425-8F10-410AC4F73716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCBEC06-DE26-4425-8F10-410AC4F73716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCBEC06-DE26-4425-8F10-410AC4F73716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589FB79F-DD28-44A6-B192-FFD15252A69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589FB79F-DD28-44A6-B192-FFD15252A69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589FB79F-DD28-44A6-B192-FFD15252A69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589FB79F-DD28-44A6-B192-FFD15252A69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{901DBF30-5DA3-4C82-821F-F9D13913FA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{901DBF30-5DA3-4C82-821F-F9D13913FA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{901DBF30-5DA3-4C82-821F-F9D13913FA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{901DBF30-5DA3-4C82-821F-F9D13913FA27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

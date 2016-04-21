@@ -1,0 +1,19 @@
+﻿<select class="form-control" ui-select2 ng-model="roleID" >
+    <option value="Admin">Admin</option>
+    <option value="Dev">Dev</option>
+</select>
+<br />
+<input id="Button1" type="button" value="设置角色"  class="btn btn-default"  ng-click="setUser()" />
+<br />
+
+@if (HasRoles("Admin"))
+{
+
+<div>Admin权限才能显示</div>
+}
+
+@if (HasRoles("Dev"))
+{
+
+<div>Dev权限才能显示</div>
+}

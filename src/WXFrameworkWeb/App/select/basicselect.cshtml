@@ -1,0 +1,33 @@
+﻿
+
+<ui-select ng-model="selected.value">
+    <ui-select-match>
+        <span ng-bind="$select.selected.name"></span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+        <span ng-bind="item.name"></span>
+    </ui-select-choices>
+</ui-select>
+{{selected}}
+<input ng-model="emp.empName" type="text" />
+
+<ui-select ng-model="emp.empType" multiple>
+    <ui-select-match>
+        <span ng-bind="$item"></span>
+    </ui-select-match>
+    <ui-select-choices repeat="empType in (empTypeList | filter: $select.search) track by empType">
+        <span ng-bind="empType"></span>
+    </ui-select-choices>
+</ui-select>
+
+{{emp}}
+
+
+
+<user-pick ng-model="user1.selected"></user-pick>
+{{user1}}
+<user-pick ng-model="user2.selected"></user-pick>
+{{user2}}
+
+<button ng-click="showMsg()" value="Show Error"></button>
+

@@ -1,0 +1,46 @@
+﻿@*<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">Showing and hiding columns</h2>
+            <div class="bs-callout bs-callout-info">
+                <h4>Overview</h4>
+                <p>Columns can be shown and hidden programmatically</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+            <h3>ngTable directive</h3>
+            <div style="margin-bottom: 20px">
+                <label class="checkbox-inline" ng-repeat="col in demo.cols">
+                    <input type="checkbox" ng-model-options="{ getterSetter: true }" ng-model="col.show" /> {{col.title}}
+                </label>
+            </div>
+            <table ng-table="demo.tableParams" class="table table-condensed table-bordered table-striped" ng-table-columns-binding="demo.cols">
+                <tr ng-repeat="row in $data">
+                    <td title="'Name'" ng-if="true">{{row.name}}</td>
+                    <td title="'Age'" ng-if="true">{{row.age}}</td>
+                    <td title="'Money'" ng-if="true">{{row.money}}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+{{ demo.cols}}*@
+
+
+<div class="col-md-6" >
+    <h3>ngTableDynamic directive</h3>
+    <div style="margin-bottom: 20px">
+        <label class="checkbox-inline" ng-repeat="col in demo.cols">
+            <input type="checkbox" ng-model="col.show" /> {{col.title}}
+        </label>
+    </div>
+    <table ng-table-dynamic="demo.tableParams with demo.cols"
+           class="table table-condensed table-bordered table-striped">
+        <tr ng-repeat="row in $data">
+            <td ng-repeat="col in $columns">{{row[col.field]}}</td>
+        </tr>
+    </table>
+</div>

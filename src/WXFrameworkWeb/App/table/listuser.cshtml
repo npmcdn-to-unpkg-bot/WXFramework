@@ -1,0 +1,35 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading font-bold">
+        搜索
+    </div>
+    <div class="panel-body">
+        <form class="bs-example form-horizontal ng-pristine ng-valid">
+            <div class='row'>
+                <div class='col-sm-6'>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">
+                            User Name
+                        </label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" ng-model="qInfor.UserName">
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <input type="button" value="Search" class="btn btn-primary" ng-click="search()" />&nbsp;&nbsp;
+            <input type="button" value="Export" class="btn btn-default" ng-click="exportData()" />
+        </form>
+    </div>
+</div>
+
+
+<table ng-table="tableParams" class="table">
+ 
+    <tr ng-repeat="user in $data">
+      
+        <td data-title="'Badge'" sortable="'badge'">{{user.Badge}}</td>
+        <td data-title="'Name'" sortable="'Name'">{{user.UserName}}</td>
+        <td data-title="'Department'">{{user.Department}}</td>
+    </tr>
+</table>

@@ -1,0 +1,17 @@
+﻿<h4>Upload on file select</h4>
+<button type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+        accept="image/*" ngf-max-height="1000" ngf-max-size="5MB">
+    Select File
+</button> {{f.name}} 
+<br><br>
+  File:
+<div style="font:smaller">
+    {{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}
+
+    <div class="progress" ng-show="f.progress >= 0">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%">
+           
+        </div>
+    </div>
+</div>
+  {{errorMsg}}

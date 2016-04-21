@@ -1,0 +1,77 @@
+30,40,41,42,43, || categoryID == "44"
+                || categoryID == "44S"
+                || categoryID == "45"
+                || categoryID == "46"
+                || categoryID == "47"
+                || categoryID == "471"
+                || categoryID == "48"
+                || categoryID == "49"
+                || categoryID.StartsWith("46");
+
+
+30,40,41,42,42,44,44s,45,46,47,471,48,49,46开头的
+
+
+
+
+Java 容器使用： glassfish,使用到容器组件。
+
+FrontEnd 部分：
+
+Apache CXF ：web service 框架
+
+spring security : 安全框架。
+
+大量使用spring类组件。
+
+apache camel :http://camel.apache.org/index.html
+
+frontend
+----frontend-app
+	----frontend
+		    接受WEB段request数据调用。调用service -》 messages 中的消息服务。
+	----webapp
+		    用户端WEB展示页面。JSP，Angular JS,,, 调用frontend端消息服务。
+
+
+service :
+----catalog-loader : 
+	    is responsible for loading and parsing catalog data from suppliers
+	
+----cdk-dependency :
+	     http://www.openscience.org/  使用到这个开源类库。
+	   
+----chemical-utils :
+	    cdk module search,,,  fingerprint of ,,,  
+		 
+----common-utils :
+	    email convert, currency convert , etc
+		
+----compound-search :
+	    SolrSearcher , SimilarProducts search, 
+
+----domain ：
+	    ORM 框架，数据库中间件
+	
+----file-transfer-manager ：
+	    AmazonS3Client 
+		
+----jde-Integration ：
+	    web service 调用JDE。
+		
+----life-sciences-search ：
+	    loading and parsing catalog data from suppliers.
+		
+----messages :
+	    接受frontend -》frontend-app -》frontend 消息调用。
+		
+----pricing ：
+        responsible for loading and parsing catalog data from suppliers
+		
+----process-manager ：
+        workflow
+		
+----search-utils
+        
+----service-app
+        router 调用AWS API.
