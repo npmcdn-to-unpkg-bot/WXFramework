@@ -52,17 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SSO\SSOManager.cs" />
     <Compile Include="Model\AppInfo.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Repository\A1Repository.cs" />
     <Compile Include="Repository\A2Repository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="Service References\SSOWebService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Repository\IA1Repository.cs" />
     <Compile Include="Model\CompoundInfo.cs" />
     <Compile Include="User\IUserManager.cs" />
@@ -80,25 +74,6 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
-    <None Include="Service References\SSOWebService\passport.wsdl" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SSOWebService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SSOWebService\passport.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SSOWebService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SSOWebService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SSOWebService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArchLib\ArchLib.csproj">

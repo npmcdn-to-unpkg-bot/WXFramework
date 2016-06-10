@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web.Configuration;
 using System.IO;
 
-using ArchBll.SSOWebService;
+
 using ArchBll.Model;
 using ArchBll.Session;
 
@@ -48,86 +48,10 @@ namespace AngularJSDemoWeb.Controllers
                 delTempFile();
 
             }
-            //sso login
-            if (Request.QueryString["Token"] != null)
-            {
-                if (Request.QueryString["Token"] != "$Token$")
-                {
-                    //持有令牌
-                    string tokenValue = Request.QueryString["Token"];
-                    PassportServiceSoapClient passport = new PassportServiceSoapClient();
-                    DataTable userroles = new DataTable();
-                    DataTable dt = passport.TokenGetCredence(out userroles, tokenValue, SYSID);
-                    //调用WebService获取主站凭证
-                    // SSO.SiteA.RefPassport.TokenService tokenService = new SSO.SiteA.RefPassport.TokenService();
 
-                    if (dt != null && userroles != null && userroles.Rows.Count > 0)
-                    {
-                        //令牌正确
-                        //add validate user code
-                        /*
-                        UserInfo u = new UserInfo();
-                        u.Badge = dt.Rows[0]["badge"].ToString();
-                        u.UserName = dt.Rows[0]["name"].ToString();
-                        u.RoleName = "Dev";
-                         *
-                        //var context = Request["MS_HttpContext"] as HttpContext;
-                        _sessionManager.UserInfo= u;
-                        */
-
-                        FormsAuthentication.SetAuthCookie(dt.Rows[0]["badge"].ToString(), false);
-                        /* because url # tag will not to server
-                         * source url: xx/path?=url
-                         * convert to
-                         * desc url xx/#/url
-                         * for example :
-                         * http://localhost:5537/?path=searchrm
-                         * to 
-                         * http://localhost:5537/#/searchrm
-                         */
-                        string finalReturnUrl = "";
-                        if (this.Request["ReturnUrl"] != null)
-                        {
-
-                            string returnUrl = this.Request["ReturnUrl"].ToString();
-                            if (returnUrl.Contains("?path="))
-                            {
-                                string path = returnUrl.Substring(returnUrl.IndexOf("?path=") + 6, returnUrl.Length - (returnUrl.IndexOf("?path=") + 6));
-                                finalReturnUrl = returnUrl.Substring(0, returnUrl.IndexOf("?path=")) + "#/" + path;
-                                this.Response.Redirect(finalReturnUrl);
-                                //return View();
-                            }
-                            else
-                            {
-                                return this.RedirectToAction("Index", "Home");
-                            }
-
-                        }
-                        else
-                        {
-                            return this.RedirectToAction("Index", "Home");
-                        }
-
-                    }
-                    else
-                    {
-                        //令牌错误或失效
-                        Response.Redirect(this.replaceToken());
-                    }
-                }
-                else
-                {
-                    //未持有令牌
-                    Response.Redirect(this.replaceToken());
-                }
-            }
-            //未进行令牌验证，去主站验证
-            else
-            {
-                Response.Redirect(this.getTokenURL());
-            }
-            return null;
-
+            FormsAuthentication.SetAuthCookie("Test", false);
+            return this.RedirectToAction("Index", "Home");
+  
         }
 
 

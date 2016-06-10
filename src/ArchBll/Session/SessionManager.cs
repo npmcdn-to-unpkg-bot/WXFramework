@@ -7,7 +7,6 @@ using System.Web.SessionState;
 using System.Data;
 
 using ArchBll.Model;
-using ArchBll.SSOWebService;
 using ArchBll.User;
 
 namespace ArchBll.Session
